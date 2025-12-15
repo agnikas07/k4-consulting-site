@@ -1,197 +1,359 @@
 <script>
-  import { onMount } from 'svelte';
-  import { Rocket, Github, Globe, Terminal, ArrowRight, Code, Layers, Zap, CheckCircle } from 'lucide-svelte';
+  import { 
+    Facebook, Twitter, Instagram, Youtube, 
+    ArrowRight, CheckCircle2, ShieldCheck, 
+    Headphones, UserCheck, Calculator, Briefcase, 
+    Users, TrendingUp, Star, Award 
+  } from 'lucide-svelte';
 
-  let activeStep = 0;
-  let copied = false;
-  
-  const steps = [
-    { 
-      title: 'Initialize', 
-      icon: Terminal, 
-      desc: 'Create SvelteKit app', 
-      cmd: 'npm create svelte@latest' 
+  // Navigation Links
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Candidate', href: '#candidate' },
+    { name: 'Contact Us', href: '#contact' }
+  ];
+
+  // Services Data
+  const services = [
+    {
+      title: 'Customer Support Agents',
+      desc: 'Reliable, trained, and fluent support agents who handle your customer inquiries professionally.',
+      icon: Headphones
     },
-    { 
-      title: 'Push', 
-      icon: Github, 
-      desc: 'Commit code to GitHub', 
-      cmd: 'git push -u origin main' 
+    {
+      title: 'Executive Assistants',
+      desc: 'Highly organized assistants who help business owners manage schedules, emails, and daily operations.',
+      icon: UserCheck
     },
-    { 
-      title: 'Deploy', 
-      icon: Globe, 
-      desc: 'Connect to Vercel', 
-      cmd: 'vercel --prod' 
+    {
+      title: 'Finance & Accounting',
+      desc: 'Experienced professionals for bookkeeping, invoicing, payroll support, and reporting.',
+      icon: Calculator
+    },
+    {
+      title: 'Operations Specialists',
+      desc: 'Experts who help streamline business processes, manage workflows, and maintain smooth operations.',
+      icon: Briefcase
     }
   ];
 
-  const features = [
-    { title: 'SvelteKit', desc: 'Full-stack app framework', icon: Code },
-    { title: 'Tailwind CSS', desc: 'Utility-first styling', icon: Layers },
-    { title: 'Vercel Ready', desc: 'Optimized for Serverless', icon: Zap },
+  // Stats Data
+  const stats = [
+    { label: 'Years of Experience', value: '10+', icon: Award },
+    { label: 'Projects Completed', value: '500+', icon: CheckCircle2 },
+    { label: 'Happy Clients', value: '100%', icon: Users },
+    { label: 'Company Rating', value: '4.9', icon: Star },
   ];
-
-  onMount(() => {
-    const timer = setInterval(() => {
-      activeStep = (activeStep + 1) % steps.length;
-    }, 4000);
-    return () => clearInterval(timer);
-  });
-
-  const copyToClipboard = (/** @type {string} */ text) => {
-    try {
-      navigator.clipboard.writeText(text);
-      copied = true;
-      setTimeout(() => copied = false, 2000);
-    } catch (err) {
-      console.error('Failed to copy', err);
-    }
-  };
 </script>
 
-<div class="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-orange-500 selection:text-white overflow-x-hidden">
+<div class="font-sans text-slate-800 bg-white">
+  
   <!-- Navigation -->
-  <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo Placeholder -->
         <div class="flex items-center gap-2">
-          <div class="bg-gradient-to-tr from-orange-500 to-red-500 p-2 rounded-lg">
-            <Rocket size={20} class="text-white" />
+          <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+            K4
           </div>
-          <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
-            SvelteLaunch
-          </span>
+          <span class="text-xl font-bold text-slate-900 tracking-tight">Kilo 4 Consulting</span>
         </div>
+
+        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#docs" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Documentation</a>
-          <a href="#components" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Components</a>
-          <button class="bg-white text-slate-900 px-4 py-2 rounded-md text-sm font-bold hover:bg-slate-200 transition-colors">
-            Get Started
-          </button>
+          {#each navLinks as link}
+            <a href={link.href} class="text-sm font-medium text-slate-600 hover:text-blue-900 transition-colors">
+              {link.name}
+            </a>
+          {/each}
+          <a href="#contact" class="bg-blue-900 text-white px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/20">
+            Get A Quote
+          </a>
         </div>
+
+        <!-- Mobile Menu Button (Placeholder) -->
+        <button class="md:hidden text-slate-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <div class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      
-      <div class="space-y-8">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-medium">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-          </span>
-          v1.0.0 SvelteKit Initialized
-        </div>
-        
-        <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-          Cybernetically <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Enhanced</span> <br/>
-          Web Apps
+  <header class="relative bg-slate-50 pt-16 pb-32 lg:pt-32 lg:pb-48 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
+          Empowering Businesses With <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-blue-600">World-Class</span> Remote Talent
         </h1>
-        
-        <p class="text-lg text-slate-400 max-w-xl">
-          Your repository is ready. This starter template comes pre-configured for SvelteKit. Edit <code>src/routes/+page.svelte</code> to start building.
+        <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl">
+          Hire highly skilled professionals from around the world—carefully vetted, trained, and ready to support your business growth.
         </p>
-        
-        <div class="flex flex-wrap gap-4">
-          <button 
-            on:click={() => copyToClipboard('git clone https://github.com/your-username/repo.git')}
-            class="flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 active:scale-95"
-          >
-            {#if copied}
-              <CheckCircle size={20} />
-              Copied!
-            {:else}
-              <Terminal size={20} />
-              Clone Repo
-            {/if}
-          </button>
-          <button class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold border border-slate-700 transition-all">
-            <Github size={20} />
-            View on GitHub
-          </button>
-        </div>
-      </div>
-
-      <!-- Interactive Preview Card -->
-      <div class="relative group">
-        <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-        <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl overflow-hidden">
-          
-          <div class="absolute top-0 right-0 p-4 opacity-10">
-            <Code size={120} />
+        <div class="flex flex-wrap gap-4 items-center">
+          <a href="#contact" class="inline-flex items-center gap-2 bg-blue-900 text-white px-8 py-4 rounded-lg text-base font-semibold hover:bg-blue-800 transition-all transform hover:-translate-y-1 shadow-xl shadow-blue-900/20">
+            Discover Project <ArrowRight size={20} />
+          </a>
+          <div class="flex items-center gap-4 px-6">
+            <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><Facebook size={20}/></a>
+            <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><Twitter size={20}/></a>
+            <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><Instagram size={20}/></a>
           </div>
-
-          <div class="space-y-6 relative z-10">
-            <h3 class="text-xl font-semibold text-white">Quick Deploy Status</h3>
-            
-            <div class="space-y-4">
-              {#each steps as step, idx}
-                <div 
-                  class="flex items-center gap-4 p-4 rounded-xl border transition-all duration-500 {idx === activeStep ? 'bg-orange-500/10 border-orange-500/50 scale-105 shadow-lg shadow-orange-500/10' : 'bg-slate-800/50 border-transparent opacity-60'}"
-                >
-                  <div class="p-2 rounded-lg {idx === activeStep ? 'bg-orange-500 text-white' : 'bg-slate-700 text-slate-400'}">
-                    <svelte:component this={step.icon} size={20} />
-                  </div>
-                  <div class="flex-1">
-                    <h4 class="font-medium {idx === activeStep ? 'text-white' : 'text-slate-300'}">{step.title}</h4>
-                    <p class="text-xs text-slate-500">{step.desc}</p>
-                  </div>
-                  {#if idx === activeStep}
-                    <div class="hidden sm:block">
-                       <ArrowRight size={16} class="text-orange-400 animate-pulse" />
-                    </div>
-                  {/if}
-                </div>
-              {/each}
-            </div>
-
-            <div class="mt-6 pt-6 border-t border-slate-800">
-              <div class="flex justify-between items-center text-xs text-slate-500 font-mono">
-                <span>deployment-id: git-sha-82f9c2</span>
-                <span class="flex items-center gap-1 text-emerald-400">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  Online
-                </span>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
-  </div>
+    <!-- Decorative Background Graphic -->
+    <div class="absolute top-0 right-0 -translate-y-12 translate-x-1/4 w-[800px] h-[800px] bg-gradient-to-br from-blue-100/50 to-transparent rounded-full blur-3xl -z-0"></div>
+  </header>
 
-  <!-- Features Grid -->
-  <div class="bg-slate-900/50 border-y border-slate-800/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div class="grid md:grid-cols-3 gap-8">
-        {#each features as feature}
-          <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-orange-500/30 transition-colors group">
-            <div class="w-12 h-12 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <svelte:component this={feature.icon} class="text-orange-400" size={24} />
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+          <h2 class="text-4xl font-bold text-slate-900">About Kilo 4 Consulting</h2>
+          <div class="prose prose-lg text-slate-600">
+            <p>
+              Kilo 4 Consulting was founded with a vision to create meaningful connections between U.S. businesses and skilled remote professionals across the world.
+            </p>
+            <p class="border-l-4 border-blue-900 pl-4 italic bg-slate-50 py-2 pr-2">
+              "Our founder, a former U.S. Air Force Explosive Detection Dog Handler, carries years of military discipline, leadership, and commitment."
+            </p>
+            <p>
+              These values shape the foundation of our business, ensuring integrity and excellence in every placement we make.
+            </p>
+          </div>
+          <a href="#about" class="inline-flex items-center gap-2 text-blue-900 font-bold hover:underline decoration-2 underline-offset-4">
+            Discover More About Us <ArrowRight size={16} />
+          </a>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-4 bg-blue-900/5 rounded-2xl transform rotate-3"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80" 
+            alt="Business meeting" 
+            class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px]"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do / Approach -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- Left Col -->
+        <div>
+          <h3 class="text-blue-900 font-bold uppercase tracking-wider text-sm mb-2">What We Do</h3>
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Connecting Talent & Opportunity</h2>
+          <p class="text-slate-600 mb-8">
+            At Kilo 4 Consulting, we connect U.S. business owners with top-tier remote professionals. We help you build a strong, reliable, and efficient team—without increasing overhead costs.
+          </p>
+          <img 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+            alt="Team collaboration" 
+            class="rounded-xl shadow-lg mb-8"
+          />
+        </div>
+
+        <!-- Right Col -->
+        <div>
+          <h3 class="text-blue-900 font-bold uppercase tracking-wider text-sm mb-2">Our Approach</h3>
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Fair & Transparent</h2>
+          <p class="text-slate-600 mb-6">
+            Unlike large agencies that take a significant portion of the worker’s pay, we operate through a one-time placement model.
+          </p>
+          
+          <ul class="space-y-4">
+            {#each [
+              'Businesses pay directly to their hired employee',
+              'Overseas workers earn what they truly deserve',
+              'No hidden fees or long-term contracts'
+            ] as item}
+              <li class="flex items-start gap-3 bg-white p-4 rounded-lg border border-slate-100 shadow-sm">
+                <ShieldCheck class="text-blue-600 shrink-0 mt-0.5" size={20} />
+                <span class="text-slate-700 font-medium">{item}</span>
+              </li>
+            {/each}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-blue-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-4xl font-bold mb-4">Solutions For Every Corner</h2>
+        <p class="text-blue-100 text-lg">
+          Kilo 4 Consulting offers a streamlined way to hire skilled remote professionals in key business roles.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {#each services as service}
+          <div class="bg-blue-800/50 border border-blue-700 p-8 rounded-2xl hover:bg-blue-800 transition-colors group">
+            <div class="bg-blue-500/20 w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-blue-200 group-hover:text-white transition-colors">
+              <svelte:component this={service.icon} size={28} />
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">{feature.title}</h3>
-            <p class="text-slate-400">{feature.desc}</p>
+            <h3 class="text-xl font-bold mb-3">{service.title}</h3>
+            <p class="text-blue-200 text-sm leading-relaxed">{service.desc}</p>
+          </div>
+        {/each}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#contact" class="inline-block bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition-colors">
+          View All Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Why Choose Us -->
+  <section class="py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row gap-16 items-center">
+        <div class="lg:w-1/2 relative">
+          <div class="absolute -left-10 -top-10 w-40 h-40 bg-blue-100 rounded-full blur-3xl"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+            alt="Mission discussion" 
+            class="relative rounded-2xl shadow-2xl z-10"
+          />
+          <div class="absolute -bottom-6 -right-6 bg-slate-900 text-white p-6 rounded-xl shadow-xl z-20 max-w-xs hidden md:block">
+            <p class="font-bold text-lg mb-2">"Discipline. Integrity. Commitment."</p>
+            <p class="text-slate-400 text-sm">- Core Values</p>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <h2 class="text-4xl font-bold text-slate-900 mb-6">Our Mission</h2>
+          <p class="text-slate-600 text-lg mb-8">
+            Founded by a former U.S. Air Force Explosive Detection K9 Handler, Kilo 4 Consulting carries values that ensure we serve both businesses and talent with honor.
+          </p>
+
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 mb-4">Our Goal is Simple:</h3>
+              <ul class="space-y-2 text-slate-600">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> Help business owners reclaim their time
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-blue-600 rounded-full"></span> Provide high-quality career opportunities overseas
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+              <h3 class="text-xl font-bold text-slate-900 mb-4">Why Choose Us?</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {#each ['Direct hiring model', 'Transparent pricing', 'Fully vetted candidates', 'Long-term support', 'Easy onboarding'] as item}
+                  <div class="flex items-center gap-2 text-slate-700 text-sm font-medium">
+                    <CheckCircle2 class="text-green-500 w-4 h-4" />
+                    {item}
+                  </div>
+                {/each}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-blue-800/50">
+        {#each stats as stat}
+          <div class="p-4">
+            <div class="flex justify-center mb-4 text-blue-300">
+              <svelte:component this={stat.icon} size={32} />
+            </div>
+            <div class="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
+            <div class="text-blue-200 text-sm font-medium uppercase tracking-wide">{stat.label}</div>
           </div>
         {/each}
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="candidate" class="py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Grow Your Team?</h2>
+      <p class="text-xl text-slate-300 mb-10">
+        Stop searching and start building. Schedule a free consultation today or browse our pre-vetted talent pool.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/25">
+          Schedule Consultation
+        </a>
+        <a href="#candidate" class="bg-transparent border border-slate-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/5 transition-colors">
+          Browse Candidates
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800 bg-slate-950 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-2">
-         <Rocket size={20} class="text-orange-500" />
-         <span class="text-slate-300 font-semibold">SvelteLaunch Template</span>
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12">
+        <div class="col-span-2">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-8 h-8 bg-blue-900 rounded flex items-center justify-center text-white font-bold text-sm">K4</div>
+            <span class="text-lg font-bold text-white">Kilo 4 Consulting</span>
+          </div>
+          <p class="mb-6 max-w-sm">
+            Empowering businesses with world-class remote talent. Connecting discipline, integrity, and skill to your workforce needs.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-white"><Facebook size={20}/></a>
+            <a href="#" class="hover:text-white"><Twitter size={20}/></a>
+            <a href="#" class="hover:text-white"><Instagram size={20}/></a>
+            <a href="#" class="hover:text-white"><Youtube size={20}/></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Our Services</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Candidate Search</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div id="contact">
+          <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 block w-2 h-2 rounded-full bg-blue-500"></span>
+              <span>123 Business Avenue, Suite 100<br/>New York, NY 10001</span>
+            </li>
+            <li class="flex items-center gap-3">
+               <span class="block w-2 h-2 rounded-full bg-blue-500"></span>
+               <span>+1 (555) 123-4567</span>
+            </li>
+            <li class="flex items-center gap-3">
+               <span class="block w-2 h-2 rounded-full bg-blue-500"></span>
+               <span>support@kilo4.com</span>
+            </li>
+          </ul>
+        </div>
       </div>
-      <p class="text-slate-500 text-sm">
-        Ready to deploy on <a href="https://vercel.com" class="text-white hover:underline decoration-orange-500 underline-offset-4">Vercel</a>
-      </p>
+      <div class="border-t border-slate-900 mt-16 pt-8 text-center text-sm">
+        <p>&copy; 2025 Kilo 4 Consulting. All rights reserved.</p>
+      </div>
     </div>
   </footer>
+
 </div>
