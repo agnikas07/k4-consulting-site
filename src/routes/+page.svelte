@@ -221,7 +221,7 @@
             alt="Mission discussion" 
             class="relative rounded-2xl shadow-2xl z-10"
           />
-          <div class="absolute -bottom-6 -right-6 bg-red-900 text-white p-6 rounded-xl shadow-xl z-20 max-w-xs hidden md:block">
+          <div class="absolute -bottom-6 -right-6 bg-[#A70E03] text-white p-6 rounded-xl shadow-xl z-20 max-w-xs hidden md:block">
             <p class="font-bold text-lg mb-2">"Discipline. Integrity. Commitment."</p>
             <p class="text-slate-400 text-sm">- Core Values</p>
           </div>
@@ -264,16 +264,16 @@
   </section>
 
   <!-- Stats Section -->
-  <section class="py-16 bg-[#D4AF37] text-white">
+  <section class="py-16 bg-[#504B51] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-red-800/50">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/75">
         {#each stats as stat}
           <div class="p-4">
-            <div class="flex justify-center mb-4 text-red-600">
+            <div class="flex justify-center mb-4 text-white">
               <svelte:component this={stat.icon} size={32} />
             </div>
-            <div class="text-4xl md:text-5xl font-bold mb-2 text-red-800">{stat.value}</div>
-            <div class="text-red-800 text-sm font-medium uppercase tracking-wide">{stat.label}</div>
+            <div class="text-4xl md:text-5xl font-bold mb-2 text-white">{stat.value}</div>
+            <div class="text-white text-sm font-medium uppercase tracking-wide">{stat.label}</div>
           </div>
         {/each}
       </div>
@@ -281,14 +281,14 @@
   </section>
 
   <!-- CTA Section -->
-  <section id="candidate" class="py-24 bg-gradient-to-br from-[#2E2E2E] to-slate-800 text-white text-center">
+  <section id="candidate" class="py-24 bg-black text-white text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Grow Your Team?</h2>
       <p class="text-xl text-slate-300 mb-10">
         Stop searching and start building. Schedule a free consultation today or browse our pre-vetted talent pool.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#contact" class="bg-[#A70E03] text-white px-8 py-4 rounded-lg font-bold hover:bg-red-500 transition-colors shadow-lg shadow-blue-600/25">
+        <a href="#contact" class="bg-[#A70E03] text-white px-8 py-4 rounded-lg font-bold hover:bg-red-500 transition-colors shadow-lg shadow-red-600/25">
           Schedule Consultation
         </a>
         <a href="#candidate" class="bg-transparent border border-slate-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/5 transition-colors">
@@ -304,8 +304,6 @@
       <div class="grid md:grid-cols-4 gap-12">
         <div class="col-span-2">
           <div class="flex items-center gap-2 mb-6">
-            <!-- <div class="w-8 h-8 bg-blue-900 rounded flex items-center justify-center text-white font-bold text-sm">K4</div> -->
-            <!-- <span class="text-lg font-bold text-white">Kilo 4 Consulting</span> -->
             <img src="/assets/k4Logo.png" alt="Kilo 4 Consulting Logo" class="h-20 md:h-32 lg:h-40 w-auto"/>
           </div>
           <p class="mb-6 max-w-sm text-white">
