@@ -45,23 +45,21 @@
   ];
 </script>
 
-<div class="font-sans text-slate-800 bg-white">
+<div class="font-sans text-black bg-white">
   
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+  <nav class="absolute top-0 left-0 w-full z-50 bg-transparent">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
-        <!-- Logo Placeholder -->
+      <div class="flex justify-between items-center h-40">
+        <!-- Logo -->
         <div class="flex items-center gap-2">
-          <div class="w-10 h-10 bg-[#A70E03] rounded-lg flex items-center justify-center text-white font-bold text-xl">
-            K4
-          </div>
-          <span class="text-xl font-bold text-slate-900 tracking-tight">Kilo 4 Consulting</span>
+           <img src="/assets/k4Logo.png" alt="K4 Logo" class="h-20 md:h-40 w-auto" />
+          <!-- <span class="text-xl font-bold text-black tracking-tight">Kilo 4 Consulting</span> -->
         </div>
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">
           {#each navLinks as link}
-            <a href={link.href} class="text-sm font-medium text-slate-600 hover:text-[#A70E03] transition-colors">
+            <a href={link.href} class="text-sm font-medium text-black hover:text-[#A70E03] transition-colors">
               {link.name}
             </a>
           {/each}
@@ -70,8 +68,8 @@
           </a>
         </div>
 
-        <!-- Mobile Menu Button (Placeholder) -->
-        <button class="md:hidden text-slate-600">
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-black">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
@@ -79,29 +77,44 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="relative bg-slate-50 pt-16 pb-32 lg:pt-32 lg:pb-48 overflow-hidden">
+  <header class="relative bg-white pt-48 pb-24 lg:pt-50 lg:pb-32 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl">
-        <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
-          Empowering Businesses With <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A70E03] to-[#d91204]">World-Class</span> Remote Talent
-        </h1>
-        <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl">
-          Hire highly skilled professionals from around the world—carefully vetted, trained, and ready to support your business growth.
-        </p>
-        <div class="flex flex-wrap gap-4 items-center">
-          <a href="#contact" class="inline-flex items-center gap-2 bg-[#A70E03] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#D4AF37] transition-all transform hover:-translate-y-1 shadow-xl shadow-red-900/20">
-            Discover Project <ArrowRight size={20} />
-          </a>
-          <div class="flex items-center gap-4 px-6">
-            <a href="#" class="text-slate-400 hover:text-[#A70E03] transition-colors"><Facebook size={20}/></a>
-            <a href="#" class="text-slate-400 hover:text-[#A70E03] transition-colors"><Twitter size={20}/></a>
-            <a href="#" class="text-slate-400 hover:text-[#A70E03] transition-colors"><Instagram size={20}/></a>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Text -->
+        <div class="max-w-2xl">
+          <h1 class="text-5xl md:text-6xl font-extrabold text-black tracking-tight leading-[1.1] mb-6">
+            Empowering Businesses With <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A70E03] to-[#d91204]">World-Class</span> Remote Talent
+          </h1>
+          <p class="text-xl text-black mb-10 leading-relaxed">
+            Hire highly skilled professionals from around the world—carefully vetted, trained, and ready to support your business growth.
+          </p>
+          <div class="flex flex-wrap gap-4 items-center">
+            <a href="#contact" class="inline-flex items-center gap-2 bg-[#A70E03] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#D4AF37] transition-all transform hover:-translate-y-1 shadow-xl shadow-red-900/20">
+              Discover Project <ArrowRight size={20} />
+            </a>
+            <div class="flex items-center gap-4 px-6">
+              <a href="#" class="text-black hover:text-[#A70E03] transition-colors"><Facebook size={20}/></a>
+              <a href="#" class="text-black hover:text-[#A70E03] transition-colors"><Twitter size={20}/></a>
+              <a href="#" class="text-black hover:text-[#A70E03] transition-colors"><Instagram size={20}/></a>
+            </div>
           </div>
         </div>
+
+        <!-- Right Column: Image Framed Off to the Side -->
+        <div class="relative flex items-center justify-center">
+            <!-- Decorative blur element behind image -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-br from-red-100/50 to-transparent rounded-full blur-3xl -z-10"></div>
+            
+            <img 
+            src="/assets/MainPhoto.jpeg" 
+            alt="Hero Section" 
+            class="relative rounded-3xl shadow-2xl w-full object-cover transform rotate-2 hover:rotate-0 transition-transform duration-500 border-4 border-white"
+            />
+        </div>
+
       </div>
     </div>
-    <!-- Decorative Background Graphic -->
-    <div class="absolute top-0 right-0 -translate-y-12 translate-x-1/4 w-[800px] h-[800px] bg-gradient-to-br from-red-100/50 to-transparent rounded-full blur-3xl -z-0"></div>
   </header>
 
   <!-- About Section -->
