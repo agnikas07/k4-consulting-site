@@ -94,9 +94,9 @@
               Discover Project <ArrowRight size={20} />
             </a>
             <div class="flex items-center gap-4 px-6">
-              <a href="https://www.facebook.com/profile.php?id=61577257187782" class="text-black hover:text-[#A70E03] transition-colors"><Facebook size={20}/></a>
+              <a href="https://www.facebook.com/profile.php?id=61577257187782" target="_blank" rel="noopener noreferrer" class="text-black hover:text-[#A70E03] transition-colors"><Facebook size={20}/></a>
               <!-- <a href="#" class="text-black hover:text-[#A70E03] transition-colors"><Twitter size={20}/></a> -->
-              <a href="https://www.instagram.com/kilo4consulting/" class="text-black hover:text-[#A70E03] transition-colors"><Instagram size={20}/></a>
+              <a href="https://www.instagram.com/kilo4consulting/" target="_blank" rel="noopener noreferrer" class="text-black hover:text-[#A70E03] transition-colors"><Instagram size={20}/></a>
             </div>
           </div>
         </div>
@@ -323,9 +323,9 @@
             Empowering businesses with world-class remote talent. Connecting discipline, integrity, and skill to your workforce needs.
           </p>
           <div class="flex gap-4">
-            <a href="https://www.facebook.com/profile.php?id=61577257187782" class="hover:text-white"><Facebook size={20}/></a>
+            <a href="https://www.facebook.com/profile.php?id=61577257187782" target="_blank" rel="noopener noreferrer" class="hover:text-white"><Facebook size={20}/></a>
             <!-- <a href="#" class="hover:text-white"><Twitter size={20}/></a> -->
-            <a href="https://www.instagram.com/kilo4consulting/" class="hover:text-white"><Instagram size={20}/></a>
+            <a href="https://www.instagram.com/kilo4consulting/" target="_blank" rel="noopener noreferrer" class="hover:text-white"><Instagram size={20}/></a>
             <!-- <a href="#" class="hover:text-white"><Youtube size={20}/></a> -->
           </div>
         </div>
