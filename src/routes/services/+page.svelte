@@ -66,7 +66,7 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <button class="md:hidden text-black">
+        <button class="md:hidden text-black" aria-label="Toggle navigation menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
@@ -209,10 +209,10 @@
             Empowering businesses with world-class remote talent. Connecting discipline, integrity, and skill to your workforce needs.
           </p>
           <div class="flex gap-4">
-            <a href="#" class="hover:text-white"><Facebook size={20}/></a>
-            <a href="#" class="hover:text-white"><Twitter size={20}/></a>
-            <a href="#" class="hover:text-white"><Instagram size={20}/></a>
-            <a href="#" class="hover:text-white"><Youtube size={20}/></a>
+            <a href="https://www.facebook.com/profile.php?id=61577257187782" class="hover:text-white"><Facebook size={20}/></a>
+            <!-- <a href="#" class="hover:text-white"><Twitter size={20}/></a> -->
+            <a href="https://www.instagram.com/kilo4consulting/" class="hover:text-white"><Instagram size={20}/></a>
+            <!-- <a href="#" class="hover:text-white"><Youtube size={20}/></a> -->
           </div>
         </div>
 

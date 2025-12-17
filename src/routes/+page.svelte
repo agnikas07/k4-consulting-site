@@ -69,7 +69,7 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <button class="md:hidden text-black">
+        <button class="md:hidden text-black" aria-label="Toggle mobile menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
@@ -94,9 +94,9 @@
               Discover Project <ArrowRight size={20} />
             </a>
             <div class="flex items-center gap-4 px-6">
-              <a href="#" class="text-black hover:text-[#A70E03] transition-colors"><Facebook size={20}/></a>
-              <a href="#" class="text-black hover:text-[#A70E03] transition-colors"><Twitter size={20}/></a>
-              <a href="#" class="text-black hover:text-[#A70E03] transition-colors"><Instagram size={20}/></a>
+              <a href="https://www.facebook.com/profile.php?id=61577257187782" class="text-black hover:text-[#A70E03] transition-colors"><Facebook size={20}/></a>
+              <!-- <a href="#" class="text-black hover:text-[#A70E03] transition-colors"><Twitter size={20}/></a> -->
+              <a href="https://www.instagram.com/kilo4consulting/" class="text-black hover:text-[#A70E03] transition-colors"><Instagram size={20}/></a>
             </div>
           </div>
         </div>
@@ -323,20 +323,20 @@
             Empowering businesses with world-class remote talent. Connecting discipline, integrity, and skill to your workforce needs.
           </p>
           <div class="flex gap-4">
-            <a href="#" class="hover:text-white"><Facebook size={20}/></a>
-            <a href="#" class="hover:text-white"><Twitter size={20}/></a>
-            <a href="#" class="hover:text-white"><Instagram size={20}/></a>
-            <a href="#" class="hover:text-white"><Youtube size={20}/></a>
+            <a href="https://www.facebook.com/profile.php?id=61577257187782" class="hover:text-white"><Facebook size={20}/></a>
+            <!-- <a href="#" class="hover:text-white"><Twitter size={20}/></a> -->
+            <a href="https://www.instagram.com/kilo4consulting/" class="hover:text-white"><Instagram size={20}/></a>
+            <!-- <a href="#" class="hover:text-white"><Youtube size={20}/></a> -->
           </div>
         </div>
 
         <div>
           <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
           <ul class="space-y-3">
-            <li><a href="#" class="text-white hover:text-[#D4AF37] transition-colors">About Us</a></li>
-            <li><a href="#" class="text-white hover:text-[#D4AF37] transition-colors">Our Services</a></li>
-            <li><a href="#" class="text-white hover:text-[#D4AF37] transition-colors">Candidate Search</a></li>
-            <li><a href="#" class="text-white hover:text-[#D4AF37] transition-colors">Contact Support</a></li>
+            <li><a href="/about" class="text-white hover:text-[#D4AF37] transition-colors">About Us</a></li>
+            <li><a href="/services" class="text-white hover:text-[#D4AF37] transition-colors">Our Services</a></li>
+            <li><a href="/candidate" class="text-white hover:text-[#D4AF37] transition-colors">Candidate Search</a></li>.
+            <li><a href="/contact" class="text-white hover:text-[#D4AF37] transition-colors">Contact Support</a></li>
           </ul>
         </div>
 
