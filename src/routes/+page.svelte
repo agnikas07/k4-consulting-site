@@ -90,8 +90,8 @@
             Hire highly skilled professionals from around the world—carefully vetted, trained, and ready to support your business growth.
           </p>
           <div class="flex flex-wrap gap-4 items-center">
-            <a href="#contact" class="inline-flex items-center gap-2 bg-[#A70E03] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#D4AF37] transition-all transform hover:-translate-y-1 shadow-xl shadow-red-900/20">
-              Discover Project <ArrowRight size={20} />
+            <a href="/contact" class="inline-flex items-center gap-2 bg-[#A70E03] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#D4AF37] transition-all transform hover:-translate-y-1 shadow-xl shadow-red-900/20">
+              Discover Talent <ArrowRight size={20} />
             </a>
             <div class="flex items-center gap-4 px-6">
               <a href="https://www.facebook.com/profile.php?id=61577257187782" target="_blank" rel="noopener noreferrer" class="text-black hover:text-[#A70E03] transition-colors"><Facebook size={20}/></a>
@@ -301,10 +301,10 @@
         Stop searching and start building. Schedule a free consultation today or browse our pre-vetted talent pool.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#contact" class="bg-[#A70E03] text-white px-8 py-4 rounded-lg font-bold hover:bg-red-500 transition-colors shadow-lg shadow-red-600/25">
+        <a href="/contact" class="bg-[#A70E03] text-white px-8 py-4 rounded-lg font-bold hover:bg-red-500 transition-colors shadow-lg shadow-red-600/25">
           Schedule Consultation
         </a>
-        <a href="#candidate" class="bg-transparent border border-slate-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/5 transition-colors">
+        <a href="/candidate" class="bg-transparent border border-slate-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/5 transition-colors">
           Browse Candidates
         </a>
       </div>
