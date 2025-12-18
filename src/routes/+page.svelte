@@ -3,8 +3,10 @@
     Facebook, Twitter, Instagram, Youtube, 
     ArrowRight, CheckCircle2, ShieldCheck, 
     Headphones, UserCheck, Calculator, Briefcase, 
-    Users, TrendingUp, Star, Award 
+    Users, TrendingUp, Star, Award, 
+    X, Menu
   } from 'lucide-svelte';
+    import { slide } from 'svelte/transition';
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -13,6 +15,20 @@
     { name: 'Candidate', href: '/candidate' },
     { name: 'Contact Us', href: '/contact' }
   ];
+
+  let isMobileMenuOpen = false;
+
+  function toggleMobileMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen;
+  }
+
+  $: if (typeof document !== 'undefined') {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
 
   const services = [
     {
@@ -69,11 +85,40 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <button class="md:hidden text-black" aria-label="Toggle mobile menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <button class="md:hidden text-black relative z-50 p-2" on:click={toggleMobileMenu} aria-label="Toggle menu">
+          {#if isMobileMenuOpen}
+            <X size={28} />
+          {:else}
+            <Menu size={28} />
+          {/if}
         </button>
       </div>
     </div>
+
+    <!-- Mobile Menu Dropdown -->
+    {#if isMobileMenuOpen}
+      <div 
+        transition:slide={{ duration: 300, axis: 'y' }}
+        class="fixed inset-0 bg-white z-40 flex flex-col pt-40 px-6 space-y-6 md:hidden overflow-y-auto h-screen"
+      >
+        {#each navLinks as link}
+          <a 
+            href={link.href} 
+            class="text-2xl font-bold text-black hover:text-[#A70E03] transition-colors border-b border-gray-100 pb-4"
+            on:click={() => isMobileMenuOpen = false}
+          >
+            {link.name}
+          </a>
+        {/each}
+        <a 
+          href="/contact" 
+          class="bg-[#A70E03] text-white text-center py-4 rounded-xl font-bold text-xl hover:bg-[#D4AF37] transition-colors shadow-lg shadow-red-900/20"
+          on:click={() => isMobileMenuOpen = false}
+        >
+          Get A Quote
+        </a>
+      </div>
+    {/if}
   </nav>
 
   <!-- Hero Section -->
@@ -134,7 +179,7 @@
               These values shape the foundation of our business, ensuring integrity and excellence in every placement we make.
             </p>
           </div>
-          <a href="#about" class="inline-flex items-center gap-2 text-[#D4AF37] font-bold hover:underline decoration-2 underline-offset-4">
+          <a href="/about" class="inline-flex items-center gap-2 text-[#D4AF37] font-bold hover:underline decoration-2 underline-offset-4">
             Discover More About Us <ArrowRight size={16} />
           </a>
         </div>
@@ -216,7 +261,7 @@
       </div>
 
       <div class="text-center mt-12">
-        <a href="#contact" class="inline-block bg-white text-[#A70E03] px-8 py-3 rounded-full font-bold hover:bg-red-50 transition-colors">
+        <a href="/services" class="inline-block bg-white text-[#A70E03] px-8 py-3 rounded-full font-bold hover:bg-red-50 transition-colors">
           View All Services
         </a>
       </div>

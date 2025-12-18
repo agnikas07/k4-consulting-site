@@ -1,8 +1,10 @@
 <script>
   import { 
     Facebook, Twitter, Instagram, Youtube, 
-    ArrowRight, MapPin, Phone, Mail, Clock, Send, CheckCircle2
+    ArrowRight, MapPin, Phone, Mail, Clock, Send, CheckCircle2,
+    Menu, X
   } from 'lucide-svelte';
+    import { slide } from 'svelte/transition';
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -36,8 +38,20 @@
     }
   ];
 
-  // Form Handling
   let formStatus = 'idle';
+  let isMobileMenuOpen = false;
+
+  function toggleMobileMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen;
+  }
+
+  $: if (typeof window !== 'undefined') {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
 
   /**
      * @param {{ preventDefault: () => void; target: any; }} event
@@ -97,11 +111,40 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <button class="md:hidden text-black" aria-label="Toggle navigation menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <button class="md:hidden text-black relative z-50 p-2" on:click={toggleMobileMenu} aria-label="Toggle menu">
+          {#if isMobileMenuOpen}
+            <X size={28} />
+          {:else}
+            <Menu size={28} />
+          {/if}
         </button>
       </div>
     </div>
+
+    <!-- Mobile Menu Dropdown -->
+    {#if isMobileMenuOpen}
+      <div 
+        transition:slide={{ duration: 300, axis: 'y' }}
+        class="fixed inset-0 bg-white z-40 flex flex-col pt-40 px-6 space-y-6 md:hidden overflow-y-auto h-screen"
+      >
+        {#each navLinks as link}
+          <a 
+            href={link.href} 
+            class="text-2xl font-bold text-black hover:text-[#A70E03] transition-colors border-b border-gray-100 pb-4"
+            on:click={() => isMobileMenuOpen = false}
+          >
+            {link.name}
+          </a>
+        {/each}
+        <a 
+          href="/contact" 
+          class="bg-[#A70E03] text-white text-center py-4 rounded-xl font-bold text-xl hover:bg-[#D4AF37] transition-colors shadow-lg shadow-red-900/20"
+          on:click={() => isMobileMenuOpen = false}
+        >
+          Get A Quote
+        </a>
+      </div>
+    {/if}
   </nav>
 
   <!-- Hero Section -->
@@ -231,7 +274,7 @@
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="bg-white text-[#A70E03] px-8 py-4 rounded-lg font-bold hover:bg-black/10 transition-colors shadow-lg">
-          Schedule a Call
+          <a href="/contact">Schedule a Call</a>
         </button>
       </div>
     </div>
