@@ -207,14 +207,14 @@
           </div>
 
           <!-- Simple Map Placeholder / Graphic -->
-          <div class="relative w-full h-64 bg-black/5 rounded-3xl overflow-hidden border border-black/5 flex items-center justify-center group">
+          <!-- <div class="relative w-full h-64 bg-black/5 rounded-3xl overflow-hidden border border-black/5 flex items-center justify-center group"> -->
              <!-- Placeholder Map Image -->
-             <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1748&q=80" alt="Map Location" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity" />
+             <!-- <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1748&q=80" alt="Map Location" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity" />
              <div class="relative z-10 bg-white px-6 py-3 rounded-full shadow-lg flex items-center gap-2">
                 <MapPin size={18} class="text-[#A70E03]" />
                 <span class="text-black font-bold text-sm">New York Office</span>
              </div>
-          </div>
+          </div> -->
 
         </div>
 
