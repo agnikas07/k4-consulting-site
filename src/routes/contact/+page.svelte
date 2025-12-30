@@ -304,7 +304,7 @@
           <ul class="space-y-3">
             <li><a href="/about" class="text-white hover:text-[#D4AF37] transition-colors">About Us</a></li>
             <li><a href="/services" class="text-white hover:text-[#D4AF37] transition-colors">Our Services</a></li>
-            <li><a href="#candidate" class="text-white hover:text-[#D4AF37] transition-colors">Candidate Search</a></li>
+            <li><a href="/candidate" class="text-white hover:text-[#D4AF37] transition-colors">Candidate Search</a></li>
             <li><a href="/contact" class="text-white hover:text-[#D4AF37] transition-colors">Contact Support</a></li>
           </ul>
         </div>
