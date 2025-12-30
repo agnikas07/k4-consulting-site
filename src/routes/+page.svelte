@@ -4,7 +4,28 @@
     ArrowRight, CheckCircle2, ShieldCheck, 
     Headphones, UserCheck, Calculator, Briefcase, 
     Users, TrendingUp, Star, Award, 
-    X, Menu
+    X, Menu,
+
+    LifeBuoy,
+
+    UserX,
+
+    UserPlus,
+
+    Settings,
+
+    DollarSign,
+
+    Wallet,
+
+    Clock
+
+
+
+
+
+
+
   } from 'lucide-svelte';
     import { slide } from 'svelte/transition';
 
@@ -12,7 +33,7 @@
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Candidate', href: '/candidate' },
+    { name: 'Candidates', href: '/candidate' },
     { name: 'Contact Us', href: '/contact' }
   ];
 
@@ -32,32 +53,32 @@
 
   const services = [
     {
-      title: 'Customer Support Agents',
-      desc: 'Reliable, trained, and fluent support agents who handle your customer inquiries professionally.',
-      icon: Headphones
+      title: 'Become a CHAMP for Your Business',
+      desc: 'A tax-advantaged benefits system that increases employee take-home pay, improves retention, reduces employer taxes, and can supplement your current benefits or stand alone, all at zero net cost.',
+      icon: Award
     },
     {
-      title: 'Executive Assistants',
-      desc: 'Highly organized assistants who help business owners manage schedules, emails, and daily operations.',
-      icon: UserCheck
+      title: 'Systems & Operations Consulting',
+      desc: 'We diagnose bottlenecks, rebuild workflows, and install the processes that make your business run cleaner, faster, and without constant firefighting.',
+      icon: Settings
     },
     {
-      title: 'Finance & Accounting',
-      desc: 'Experienced professionals for bookkeeping, invoicing, payroll support, and reporting.',
-      icon: Calculator
+      title: 'Remote Talent Acquisition',
+      desc: 'Hiring without borders. Elite, pre-vetted remote professionals who plug directly into your operations and expand your capacity without expanding payroll.',
+      icon: UserPlus
     },
     {
-      title: 'Operations Specialists',
-      desc: 'Experts who help streamline business processes, manage workflows, and maintain smooth operations.',
-      icon: Briefcase
+      title: 'High Level Strategic Leadership',
+      desc: 'Leadership without the full-time salary. I help you set direction, build execution plans, align your team, and keep the business moving forward.',
+      icon: LifeBuoy
     }
   ];
 
   const stats = [
-    { label: 'Years of Experience', value: '10+', icon: Award },
-    { label: 'Projects Completed', value: '500+', icon: CheckCircle2 },
-    { label: 'Happy Clients', value: '100%', icon: Users },
-    { label: 'Company Rating', value: '4.9', icon: Star },
+    { label: 'PAYROLL SAVINGS', value: '60-80%', icon: Calculator },
+    { label: 'COMP GAIN PEPM', value: '$30-$300', icon: Briefcase },
+    { label: 'EMPLOYER TAX SAVINGS', value: '$573.60', icon: Wallet },
+    { label: 'HOURS BACK WEEKLY', value: '40+', icon: Clock },
   ];
 </script>
 
@@ -80,7 +101,7 @@
             </a>
           {/each}
           <a href="#contact" class="bg-[#A70E03] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#D4AF37] transition-colors shadow-lg shadow-red-900/20">
-            Get A Quote
+            Schedule A Consultation
           </a>
         </div>
 
@@ -129,14 +150,14 @@
         <!-- Left Column: Text -->
         <div class="max-w-2xl">
           <h1 class="text-5xl md:text-6xl font-extrabold text-black tracking-tight leading-[1.1] mb-6">
-            Empowering Businesses With <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A70E03] to-[#d91204]">World-Class</span> Remote Talent
+            Better Talent. Better Systems. <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A70E03] to-[#d91204]">Better Business.</span>
           </h1>
           <p class="text-xl text-black mb-10 leading-relaxed">
-            Hire highly skilled professionals from around the world—carefully vetted, trained, and ready to support your business growth.
+            When your talent, systems, and benefits all run right, the business stops draining you and starts compounding. We build that for you.
           </p>
           <div class="flex flex-wrap gap-4 items-center">
-            <a href="/contact" class="inline-flex items-center gap-2 bg-[#A70E03] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#D4AF37] transition-all transform hover:-translate-y-1 shadow-xl shadow-red-900/20">
-              Discover Talent <ArrowRight size={20} />
+            <a href="/services" class="inline-flex items-center gap-2 bg-[#A70E03] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#D4AF37] transition-all transform hover:-translate-y-1 shadow-xl shadow-red-900/20">
+              See the Breakdown <ArrowRight size={20} />
             </a>
             <div class="flex items-center gap-4 px-6">
               <a href="https://www.facebook.com/profile.php?id=61577257187782" target="_blank" rel="noopener noreferrer" class="text-black hover:text-[#A70E03] transition-colors"><Facebook size={20}/></a>
@@ -154,7 +175,7 @@
             <img 
             src="/assets/MainPhoto.jpeg" 
             alt="Hero Section" 
-            class="relative rounded-3xl shadow-2xl w-full object-cover transform rotate-2 hover:rotate-0 transition-transform duration-500 border-4 border-white"
+            class="relative rounded-3xl shadow-2xl w-full object-cover border-4 border-white"
             />
         </div>
 
@@ -167,16 +188,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
-          <h2 class="text-4xl font-bold text-white">About Kilo 4 Consulting</h2>
+          <h2 class="text-4xl font-bold text-white">About Us</h2>
           <div class="prose prose-lg text-white max-w-none space-y-4">
             <p>
-              Kilo 4 Consulting was founded with a vision to create meaningful connections between U.S. businesses and skilled remote professionals across the world.
+              “Kilo 4 Consulting was built on a simple belief: most businesses don’t fail from lack of effort. They fail from lack of structure. We help founders install the systems, talent, and benefits that make growth predictable instead of painful. If it doesn’t move the business forward, we don’t do it.
             </p>
             <p class="border-l-4 border-[#D4AF37] pl-4 italic bg-[#504B51] py-2 pr-2">
               "Our founder, a former U.S. Air Force Explosive Detection Dog Handler, carries years of military discipline, leadership, and commitment."
             </p>
             <p>
-              These values shape the foundation of our business, ensuring integrity and excellence in every placement we make.
+              No fluff. No guesswork. Just execution.
             </p>
           </div>
           <a href="/about" class="inline-flex items-center gap-2 text-[#D4AF37] font-bold hover:underline decoration-2 underline-offset-4">
@@ -204,7 +225,7 @@
           <h3 class="text-[#A70E03] font-bold uppercase tracking-wider text-sm mb-2">What We Do</h3>
           <h2 class="text-3xl font-bold text-slate-900 mb-6">Connecting Talent & Opportunity</h2>
           <p class="text-slate-600 mb-8">
-            At Kilo 4 Consulting, we connect U.S. business owners with top-tier remote professionals. We help you build a strong, reliable, and efficient team—without increasing overhead costs.
+            We help founders remove the bottlenecks that slow their business down. Whether that’s missing talent, sloppy systems, weak training, or benefits that don’t retain anyone. Our work covers the full support stack, and you get a business that grows without leaning on you for everything.
           </p>
           <img 
             src="/assets/whatWeDoImage.jpg" 
@@ -216,16 +237,17 @@
         <!-- Right Col -->
         <div>
           <h3 class="text-[#A70E03] font-bold uppercase tracking-wider text-sm mb-2">Our Approach</h3>
-          <h2 class="text-3xl font-bold text-slate-900 mb-6">Fair & Transparent</h2>
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">More leverage. More output.</h2>
           <p class="text-slate-600 mb-6">
-            Unlike large agencies that take a significant portion of the worker’s pay, we operate through a one-time placement model.
+            We don’t bury you in long contracts or push benefits that drain your margin. We keep the model simple: give founders capable people, cleaner systems, and a benefits program that pays for itself — then back it up with consulting or training when the business needs it. 
           </p>
           
           <ul class="space-y-4">
             {#each [
-              'Businesses pay directly to their hired employee',
-              'Overseas workers earn what they truly deserve',
-              'No hidden fees or long-term contracts'
+              'Hiring elite remote professionals',
+              'Tightening operations and workflows',
+              'Turning your team into CHAMPs with tax-advantaged benefits',
+              'Delivering creative consulting to solve real business problems'
             ] as item}
               <li class="flex items-start gap-3 bg-white p-4 rounded-lg border border-slate-100 shadow-sm">
                 <ShieldCheck class="text-[#d91204] shrink-0 mt-0.5" size={20} />
@@ -244,7 +266,7 @@
       <div class="text-center max-w-2xl mx-auto mb-16">
         <h2 class="text-4xl font-bold mb-4">Solutions For Every Corner</h2>
         <p class="text-red-75 text-lg">
-          Kilo 4 Consulting offers a streamlined way to hire skilled remote professionals in key business roles.
+          Kilo 4 Consulting delivers the core support founders need to scale. From world-class talent to stronger systems to benefits that actually move the needle.
         </p>
       </div>
 
@@ -288,7 +310,7 @@
         <div class="lg:w-1/2">
           <h2 class="text-4xl font-bold text-slate-900 mb-6">Our Mission</h2>
           <p class="text-slate-600 text-lg mb-8">
-            Founded by a former U.S. Air Force Explosive Detection K9 Handler, Kilo 4 Consulting carries values that ensure we serve both businesses and talent with honor.
+            Kilo 4 Consulting exists to help founders regain control of their business. Built by a USAF veteran who knows service doesn’t have to stop when you take off the uniform, our work is grounded in discipline, clarity, and execution. Everything we do is designed to remove friction, restore structure, and give owners the support they need to scale.
           </p>
 
           <div class="space-y-8">
@@ -296,10 +318,13 @@
               <h3 class="text-xl font-bold text-slate-900 mb-4">Our Goal is Simple:</h3>
               <ul class="space-y-2 text-slate-600">
                 <li class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 bg-slate-600 rounded-full"></span> Help business owners reclaim their time
+                  <span class="w-1.5 h-1.5 bg-slate-600 rounded-full"></span> Give business owners their time and focus back
                 </li>
                 <li class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 bg-slate-600 rounded-full"></span> Provide high-quality career opportunities overseas
+                  <span class="w-1.5 h-1.5 bg-slate-600 rounded-full"></span> Create stronger teams, cleaner systems, and better outcomes
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-slate-600 rounded-full"></span> Equip businesses with benefits and leadership that actually move the needle.
                 </li>
               </ul>
             </div>
@@ -307,9 +332,15 @@
             <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
               <h3 class="text-xl font-bold text-slate-900 mb-4">Why Choose Us?</h3>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {#each ['Direct hiring model', 'Transparent pricing', 'Fully vetted candidates', 'Long-term support', 'Easy onboarding'] as item}
-                  <div class="flex items-center gap-2 text-slate-700 text-sm font-medium">
-                    <CheckCircle2 class="text-green-500 w-4 h-4" />
+                {#each ['Clear, direct guidance from someone who has led teams in high-pressure environments', 
+                'Access to elite remote talent when you need to expand capacity', 
+                'CHAMP benefits that raise take-home pay while reducing employer taxes', 
+                'Systems consulting that removes chaos and builds scalable processes', 
+                'Fractional leadership that provides direction without the full-time salary',
+                'Straightforward engagement, easy onboarding, and no long-term handcuffs'
+                ] as item}
+                  <div class="flex items-center gap-2 text-black text-sm font-medium">
+                    <CheckCircle2 class="text-green-500 w-4 h-4 shrink-0" />
                     {item}
                   </div>
                 {/each}
@@ -324,9 +355,9 @@
   <!-- Stats Section -->
   <section class="py-16 bg-[#504B51] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/75">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 text-center md:divide-x md:divide-white/75">
         {#each stats as stat}
-          <div class="p-4">
+          <div class="px-8 py-4 flex flex-col items-center justify-center">
             <div class="flex justify-center mb-4 text-white">
               <svelte:component this={stat.icon} size={32} />
             </div>
@@ -341,9 +372,9 @@
   <!-- CTA Section -->
   <section id="candidate" class="py-24 bg-black text-white text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Grow Your Team?</h2>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready To Engineer Your Business For Freedom?</h2>
       <p class="text-xl text-slate-300 mb-10">
-        Stop searching and start building. Schedule a free consultation today or browse our pre-vetted talent pool.
+        Stop searching and start building. Schedule a free consultation today.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="/contact" class="bg-[#A70E03] text-white px-8 py-4 rounded-lg font-bold hover:bg-red-500 transition-colors shadow-lg shadow-red-600/25">
@@ -380,25 +411,21 @@
           <ul class="space-y-3">
             <li><a href="/about" class="text-white hover:text-[#D4AF37] transition-colors">About Us</a></li>
             <li><a href="/services" class="text-white hover:text-[#D4AF37] transition-colors">Our Services</a></li>
-            <li><a href="/candidate" class="text-white hover:text-[#D4AF37] transition-colors">Candidate Search</a></li>
-            <li><a href="/contact" class="text-white hover:text-[#D4AF37] transition-colors">Contact Support</a></li>
+            <li><a href="/candidate" class="text-white hover:text-[#D4AF37] transition-colors">Candidates</a></li>
+            <li><a href="/contact" class="text-white hover:text-[#D4AF37] transition-colors">Contact</a></li>
           </ul>
         </div>
 
         <div id="contact">
           <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
           <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <span class="mt-1 block w-2 h-2 rounded-full bg-[#D4AF37]"></span>
-              <span class="text-white">123 Business Avenue, Suite 100<br/>New York, NY 10001</span>
+            <li class="flex items-center gap-3">
+               <span class="block w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+               <span class="text-white">+1 (678) 480-0542</span>
             </li>
             <li class="flex items-center gap-3">
                <span class="block w-2 h-2 rounded-full bg-[#D4AF37]"></span>
-               <span class="text-white">+1 (555) 123-4567</span>
-            </li>
-            <li class="flex items-center gap-3">
-               <span class="block w-2 h-2 rounded-full bg-[#D4AF37]"></span>
-               <span class="text-white">support@kilo4.com</span>
+               <span class="text-white">pablo.g@kilo4consulting.com</span>
             </li>
           </ul>
         </div>

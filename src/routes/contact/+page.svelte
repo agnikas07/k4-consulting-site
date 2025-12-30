@@ -10,32 +10,32 @@
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Candidate', href: '/candidate' },
+    { name: 'Candidates', href: '/candidate' },
     { name: 'Contact Us', href: '/contact' }
   ];
 
   // Contact Info
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: 'Our Location',
-      details: ['123 Business Avenue, Suite 100', 'New York, NY 10001']
-    },
+    // {
+    //   icon: MapPin,
+    //   title: 'Our Location',
+    //   details: ['123 Business Avenue, Suite 100', 'New York, NY 10001']
+    // },
     {
       icon: Phone,
       title: 'Phone Number',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543']
+      details: ['+1 (678) 480-0542']
     },
     {
       icon: Mail,
       title: 'Email Address',
-      details: ['support@kilo4.com', 'careers@kilo4.com']
-    },
-    {
-      icon: Clock,
-      title: 'Working Hours',
-      details: ['Mon - Fri: 9:00 AM - 6:00 PM', 'Sat - Sun: Closed']
+      details: ['pablo.g@kilo4consulting.com']
     }
+    // {
+    //   icon: Clock,
+    //   title: 'Working Hours',
+    //   details: ['Mon - Fri: 9:00 AM - 6:00 PM', 'Sat - Sun: Closed']
+    // }
   ];
 
   let formStatus = 'idle';
@@ -106,7 +106,7 @@
             </a>
           {/each}
           <a href="/contact" class="bg-[#A70E03] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#D4AF37] transition-colors shadow-lg shadow-red-900/20">
-            Get A Quote
+            Schedule A Consultation
           </a>
         </div>
 
@@ -230,7 +230,7 @@
         <div class="space-y-10">
           <div>
             <h2 class="text-3xl font-bold text-black mb-2">Contact Information</h2>
-            <p class="text-black/60 mb-8">Reach out directly via phone, email, or visit our office.</p>
+            <p class="text-black/60 mb-8">Reach out directly via phone or email.</p>
             
             <div class="grid gap-6">
               {#each contactInfo as info}
@@ -304,25 +304,21 @@
           <ul class="space-y-3">
             <li><a href="/about" class="text-white hover:text-[#D4AF37] transition-colors">About Us</a></li>
             <li><a href="/services" class="text-white hover:text-[#D4AF37] transition-colors">Our Services</a></li>
-            <li><a href="/candidate" class="text-white hover:text-[#D4AF37] transition-colors">Candidate Search</a></li>
-            <li><a href="/contact" class="text-white hover:text-[#D4AF37] transition-colors">Contact Support</a></li>
+            <li><a href="/candidate" class="text-white hover:text-[#D4AF37] transition-colors">Candidates</a></li>
+            <li><a href="/contact" class="text-white hover:text-[#D4AF37] transition-colors">Contact</a></li>
           </ul>
         </div>
 
         <div id="contact">
           <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
           <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <span class="mt-1 block w-2 h-2 rounded-full bg-[#D4AF37]"></span>
-              <span class="text-white">123 Business Avenue, Suite 100<br/>New York, NY 10001</span>
+            <li class="flex items-center gap-3">
+               <span class="block w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+               <span class="text-white">+1 (678) 480-0542</span>
             </li>
             <li class="flex items-center gap-3">
                <span class="block w-2 h-2 rounded-full bg-[#D4AF37]"></span>
-               <span class="text-white">+1 (555) 123-4567</span>
-            </li>
-            <li class="flex items-center gap-3">
-               <span class="block w-2 h-2 rounded-full bg-[#D4AF37]"></span>
-               <span class="text-white">support@kilo4.com</span>
+               <span class="text-white">pablo.g@kilo4consulting.com</span>
             </li>
           </ul>
         </div>
