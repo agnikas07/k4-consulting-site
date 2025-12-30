@@ -55,7 +55,7 @@
       <div class="flex justify-between items-center h-40">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2">
-           <img src="/assets/k4Logo.png" alt="K4 Logo" class="h-24 md:h-32 w-auto" />
+           <img src="/assets/k4Logo.png" alt="K4 Logo" class="h-24 md:h-40 w-auto" />
         </a>
 
         <!-- Desktop Menu -->
