@@ -6,8 +6,8 @@
     X, Menu, PlayCircle
   } from 'lucide-svelte';
   import { getCandidateByCategory } from '$lib/sanity';
-  import { fade, slide } from 'svelte/transition';
-    import { get } from 'svelte/store';
+  import { slide } from 'svelte/transition';
+
 
   const navLinks = [
     { name: 'Home', href: '/' },
