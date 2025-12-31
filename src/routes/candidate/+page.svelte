@@ -2,11 +2,12 @@
   import { onMount } from 'svelte';
   import { 
     Facebook, Twitter, Instagram, Youtube, 
-    ArrowRight, MapPin, Briefcase, Calendar, CheckCircle2, User, Star, FileDown,
-    X, Menu
+    MapPin,CheckCircle2, User, Star, FileDown,
+    X, Menu, PlayCircle
   } from 'lucide-svelte';
-  import { getFeaturedCandidate } from '$lib/sanity';
+  import { getCandidateByCategory } from '$lib/sanity';
   import { fade, slide } from 'svelte/transition';
+    import { get } from 'svelte/store';
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -16,8 +17,16 @@
     { name: 'Contact Us', href: '/contact' }
   ];
 
+  const categories = [
+    'Customer Support Agent',
+    'Executive Assistant',
+    'Finance & Accounting',
+    'Operations Specialist'
+  ]
+
+  let selectedCategory = categories[0];
   /**
-     * @type {{ image: any; name: string; title: any; location: any; experience: string | any[]; availability: any; resumeUrl: any; skills: any; bio: any; } | null}
+     * @type {{ image: any; name: string; title: any; location: any; experience: string | any[]; availability: any; resumeUrl: any; skills: any; bio: any; introVideo: any; } | null}
      */
   let candidate = null;
   let loading = true;
@@ -35,15 +44,60 @@
     }
   }
 
-  onMount(async () => {
+  /**
+     * @param {string | string[]} url
+     */
+  function getVideoType(url) {
+    if (!url) return null;
+    if (url.includes('youtube.com') || url.includes('youtu.be')) return 'youtube';
+    if (url.includes('vimeo.com')) return 'vimeo';
+    return 'file';
+  }
+
+  /**
+     * @param {string} url
+     */
+  function getEmbedUrl(url) {
+    if (!url) return '';
+    
+    // Handle YouTube
+    if (url.includes('youtube.com') || url.includes('youtu.be')) {
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+      const match = url.match(regExp);
+      const id = (match && match[2].length === 11) ? match[2] : null;
+      return id ? `https://www.youtube.com/embed/${id}` : url;
+    }
+    
+    // Handle Vimeo
+    if (url.includes('vimeo.com')) {
+      const regExp = /vimeo\.com\/(\d+)/;
+      const match = url.match(regExp);
+      const id = match ? match[1] : null;
+      return id ? `https://player.vimeo.com/video/${id}` : url;
+    }
+
+    return url;
+  }
+
+  /**
+     * @param {string} category
+     */
+  async function loadCandidate(category) {
+    loading = true;
+    selectedCategory = category;
+    candidate = null;
+
     try {
-      // Fetch data from Sanity
-      candidate = await getFeaturedCandidate();
+      candidate = await getCandidateByCategory(category);
     } catch (error) {
       console.error("Failed to fetch candidate:", error);
     } finally {
       loading = false;
     }
+  }
+
+  onMount(() => {
+    loadCandidate(selectedCategory);
   });
 </script>
 
@@ -108,24 +162,40 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="relative bg-black/5 pt-48 pb-24 lg:pt-56 lg:pb-32 overflow-hidden">
+  <header class="relative bg-black/5 pt-48 pb-12 lg:pt-56 lg:pb-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center max-w-3xl mx-auto">
         <h1 class="text-5xl md:text-6xl font-extrabold text-black tracking-tight leading-[1.1] mb-6">
           Featured <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A70E03] to-[#d91204]">Candidate</span>
         </h1>
         <p class="text-xl text-black/80 mb-10 leading-relaxed">
-          Get a glimpse of the top-tier talent we place. Profiles are pre-vetted, trained, and ready to make an impact.
+           Select a category below to get a glimpse of the top-tier talent we place. Profiles are pre-vetted, trained, and ready to make an impact.
         </p>
       </div>
     </div>
-    <!-- Decorative Background Graphic -->
     <div class="absolute top-0 right-0 -translate-y-12 translate-x-1/4 w-[800px] h-[800px] bg-gradient-to-br from-red-100/50 to-transparent rounded-full blur-3xl -z-0"></div>
     <div class="absolute top-0 left-0 -translate-y-12 -translate-x-1/4 w-[800px] h-[800px] bg-gradient-to-br from-black/5 to-transparent rounded-full blur-3xl -z-0"></div>
   </header>
 
-  <!-- Candidate Profile Section -->
-  <section class="py-24 bg-white relative">
+  <section class="bg-white pt-8 pb-12 border-b border-gray-100 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-4">
+        {#each categories as cat}
+          <button 
+            on:click={() => loadCandidate(cat)}
+            class="px-6 py-3 rounded-full font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5
+            {selectedCategory === cat 
+              ? 'bg-[#A70E03] text-white shadow-lg shadow-red-900/20' 
+              : 'bg-white border border-gray-200 text-gray-600 hover:border-[#A70E03] hover:text-[#A70E03]'}"
+          >
+            {cat}
+          </button>
+        {/each}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white relative min-h-[600px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       {#if loading}
@@ -133,11 +203,9 @@
           <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#A70E03]"></div>
         </div>
       {:else if candidate}
-        <div class="grid lg:grid-cols-3 gap-12">
+        <div class="grid lg:grid-cols-3 gap-12" transition:slide>
           
-          <!-- Left Column: Sidebar / At a Glance -->
           <div class="lg:col-span-1 space-y-8">
-            <!-- Profile Card -->
             <div class="bg-white rounded-3xl border border-black/10 p-6 shadow-xl relative overflow-hidden group">
               <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-[#A70E03] to-[#d91204]"></div>
               
@@ -153,12 +221,6 @@
                     <MapPin size={16} class="text-[#A70E03]" />
                     {candidate.location}
                   </div>
-                  {#if candidate.experience && candidate.experience.length > 0}
-                    <div class="flex items-center gap-3 text-sm text-black/70 justify-center">
-                      <Briefcase size={16} class="text-[#A70E03]" />
-                      {candidate.experience[0].role}
-                    </div>
-                  {/if}
                   <div class="flex items-center gap-3 text-sm text-green-600 font-semibold justify-center">
                     <CheckCircle2 size={16} />
                     {candidate.availability}
@@ -179,7 +241,6 @@
               </div>
             </div>
 
-            <!-- Skills Card -->
             <div class="bg-black/5 rounded-3xl p-8 border border-black/5">
               <h3 class="text-lg font-bold text-black mb-4 flex items-center gap-2">
                 <Star size={20} class="text-[#A70E03]" /> Skills & Expertise
@@ -196,10 +257,8 @@
             </div>
           </div>
 
-          <!-- Right Column: Main Content -->
           <div class="lg:col-span-2 space-y-12">
             
-            <!-- About Me -->
             <div>
               <h3 class="text-2xl font-bold text-black mb-6 flex items-center gap-3">
                 <User size={28} class="text-[#A70E03]" /> About Me
@@ -209,49 +268,64 @@
               </div>
             </div>
 
-            <!-- Experience -->
             <div>
               <h3 class="text-2xl font-bold text-black mb-8 flex items-center gap-3">
-                <Briefcase size={28} class="text-[#A70E03]" /> Work History
+                <PlayCircle size={28} class="text-[#A70E03]" /> Introductory Video
               </h3>
               
-              {#if candidate.experience && candidate.experience.length > 0}
-                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+              {#if candidate.introVideo}
+                <div class="rounded-2xl overflow-hidden shadow-2xl border border-black/10 bg-black aspect-video relative group">
                   
-                  {#each candidate.experience as role}
-                    <div class="relative flex items-start group is-active">
-                      <!-- Timeline Dot -->
-                      <div class="absolute left-0 ml-5 -translate-x-1/2 mt-1.5 w-4 h-4 rounded-full border-2 border-white bg-slate-300 group-[.is-active]:bg-[#A70E03] shadow-sm"></div>
-                      
-                      <div class="ml-12 w-full">
-                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
-                          <h4 class="text-xl font-bold text-black">{role.role}</h4>
-                          <span class="text-sm font-semibold text-[#A70E03] flex items-center gap-1">
-                            <Calendar size={14} /> {role.period}
-                          </span>
-                        </div>
-                        <p class="text-black/60 font-medium mb-3">{role.company}</p>
-                        <p class="text-black/70 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-100">
-                          {role.description}
-                        </p>
-                      </div>
-                    </div>
-                  {/each}
+                  {#if getVideoType(candidate.introVideo) === 'youtube' || getVideoType(candidate.introVideo) === 'vimeo'}
+                    <iframe 
+                      src={getEmbedUrl(candidate.introVideo)} 
+                      title="Candidate Intro Video"
+                      class="w-full h-full"
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen
+                    ></iframe>
+                  {:else}
+                    <video 
+                       controls 
+                       class="w-full h-full object-cover"
+                       src={candidate.introVideo}
+                       poster={candidate.image} 
+                     >
+                       <track kind="captions" />
+                       Your browser does not support the video tag.
+                     </video>
+                  {/if}
 
                 </div>
+                <p class="mt-4 text-black/60 italic text-sm text-center">
+                  Get a sense of {candidate.name.split(' ')[0]}'s communication style and professionalism.
+                </p>
               {:else}
-                <p class="text-black/60 italic">No work history available.</p>
+                 <div class="bg-slate-50 border border-slate-200 rounded-2xl p-12 text-center">
+                    <div class="inline-flex bg-slate-200 p-4 rounded-full mb-4">
+                       <PlayCircle size={32} class="text-slate-400" />
+                    </div>
+                    <p class="text-slate-500 font-medium">No introductory video available for this candidate.</p>
+                 </div>
               {/if}
             </div>
-
-          </div>
+            </div>
 
         </div>
       {:else}
-        <!-- Empty State / Error State -->
         <div class="text-center py-24">
+          <div class="bg-slate-50 inline-block p-8 rounded-full mb-6">
+            <User size={48} class="text-slate-300" />
+          </div>
           <h3 class="text-2xl font-bold text-black mb-4">No Candidate Found</h3>
-          <p class="text-black/60">Please check back later or contact us for more information.</p>
+          <p class="text-black/60 max-w-md mx-auto">
+            We currently don't have a featured candidate displayed for the <span class="font-bold text-[#A70E03]">{selectedCategory}</span> category. 
+            Please contact us directly for our full roster.
+          </p>
+          <a href="/contact" class="inline-block mt-8 bg-[#A70E03] text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors">
+            Contact Us
+          </a>
         </div>
       {/if}
 

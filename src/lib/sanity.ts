@@ -18,8 +18,8 @@ export function urlFor(source: any) {
   return builder.image(source);
 }
 
-export async function getFeaturedCandidate() {
-  const query = `*[_type == "candidate"] | order(_updatedAt desc)[0] {
+export async function getCandidateByCategory(category: string) {
+  const query = `*[_type == "candidate" && category == $category] | order(_updatedAt desc)[0] {
     name,
     title,
     location,
@@ -28,15 +28,17 @@ export async function getFeaturedCandidate() {
     "resumeUrl": resume.asset->url,
     bio,
     skills,
+    introVideo,
     experience
   }`;
 
-  const candidate = await sanityClient.fetch(query);
+  const params = { category };
+  const candidate = await sanityClient.fetch(query, params);
 
   if (!candidate) return null;
 
   return {
     ...candidate,
-    image: candidate.image ? urlFor(candidate.image).width(800).url() : '/assets/aboutSectionImage.jpg' // Fallback image
+    image: candidate.image ? urlFor(candidate.image).width(800).url() : '/assets/aboutSectionImage.jpg'
   };
 }
