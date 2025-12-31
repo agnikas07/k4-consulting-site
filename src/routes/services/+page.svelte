@@ -31,27 +31,27 @@
 
   const services = [
     {
-      title: 'Customer Support Agents',
-      desc: 'Our customer support agents are more than just voice pieces; they are the frontline ambassadors of your brand. Trained in conflict resolution, product knowledge, and empathy, they ensure every customer interaction builds loyalty.',
-      details: ['24/7 Support Coverage', 'Multi-channel Support (Phone, Email, Chat)', 'Ticket Management', 'Customer Satisfaction Reporting'],
+      title: 'Become a CHAMP For Your Business',
+      desc: 'A tax-advantaged benefits system that increases employee take-home pay, improves retention, reduces employer taxes, and can supplement your current benefits or stand alone, all at zero net cost.',
+      details: ['Zero Net Cost Implementation', 'Increased Employee Retention', 'Employer Tax Reduction', 'Benefits System Integration'],
       icon: Headphones
     },
     {
-      title: 'Executive Assistants',
-      desc: 'Free yourself from the daily administrative grind. Our Executive Assistants are highly organized professionals who manage your calendar, handle correspondence, and keep your business operations running smoothly.',
-      details: ['Calendar & Schedule Management', 'Email Correspondence', 'Travel Arrangements', 'Meeting Minutes & Preparation'],
+      title: 'Remote Talent Acquisition',
+      desc: 'Hiring without borders. Elite, pre-vetted remote professionals who plug directly into your operations and expand your capacity without expanding payroll.',
+      details: ['Global Talent Sourcing', 'Pre-vetted Professionals', 'Operational Integration', 'Payroll Efficiency'],
       icon: UserCheck
     },
     {
-      title: 'Finance & Accounting',
-      desc: 'Gain clarity and control over your finances with our specialized accounting professionals. From daily bookkeeping to complex financial reporting, we provide the accuracy and compliance your business needs.',
-      details: ['Bookkeeping & Invoicing', 'Payroll Processing', 'Financial Reporting', 'Tax Preparation Support'],
+      title: 'Systems & Operations Consulting',
+      desc: 'We diagnose bottlenecks, rebuild workflows, and install the processes that make your business run cleaner, faster, and without constant firefighting.',
+      details: ['Workflow Diagnosis', 'Bottleneck Removal', 'Process Installation', 'Efficiency Optimization'],
       icon: Calculator
     },
     {
-      title: 'Operations Specialists',
-      desc: 'Streamline your workflows and improve efficiency. Our Operations Specialists analyze your current processes and implement strategies to reduce bottlenecks and enhance productivity across your organization.',
-      details: ['Process Improvement', 'Project Management', 'Data Analysis', 'Vendor Management'],
+      title: 'Fractional Leadership',
+      desc: 'High-level strategic leadership without the full-time salary. I help you set direction, build execution plans, align your team, and keep the business moving forward.',
+      details: ['Strategic Direction', 'Execution Planning', 'Team Alignment', 'Business Growth Roadmap'],
       icon: Briefcase
     }
   ];
