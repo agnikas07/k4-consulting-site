@@ -197,7 +197,7 @@
   <section class="py-24 bg-black text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-4xl font-bold mb-6">Our Hiring Process</h2>
+        <h2 class="text-4xl font-bold mb-6">Our Talent Selection Process</h2>
         <p class="text-white/70 text-lg">
           We handle the heavy lifting of recruitment so you can focus on scaling your business.
         </p>
