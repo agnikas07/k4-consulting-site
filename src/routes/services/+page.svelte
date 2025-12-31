@@ -57,6 +57,10 @@
   ];
 </script>
 
+<svelte:head>
+  <title>Services | Kilo 4 Consulting</title>
+</svelte:head>
+
 <div class="font-sans text-black bg-white">
   
   <!-- Navigation Bar (Shared Style) -->

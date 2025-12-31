@@ -82,6 +82,10 @@
   ];
 </script>
 
+<svelte:head>
+  <title>Kilo 4 Consulting</title>
+</svelte:head>
+
 <div class="font-sans text-black bg-white">
   
   <nav class="absolute top-0 left-0 w-full z-50 bg-transparent">

@@ -4,7 +4,7 @@ import favicon from '$lib/assets/favicon.png';
 let { children } = $props();</script>
 
 <svelte:head>
-	<link rel="icon" href="{favicon}" />
+	<title>Kilo 4 Consulting</title> <link rel="icon" href="{favicon}" />
 </svelte:head>
 
 {@render children()}
