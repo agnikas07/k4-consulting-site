@@ -184,7 +184,7 @@
             <!-- CTA Link -->
             <div class="pt-8 mt-4 border-t border-black/5 relative z-10">
               <a href="/contact" class="inline-flex items-center gap-2 text-black font-bold hover:text-[#A70E03] transition-colors group/link">
-                Request Talent <ArrowRight size={18} class="group-hover/link:translate-x-1 transition-transform" />
+                Schedule a Consultation <ArrowRight size={18} class="group-hover/link:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
