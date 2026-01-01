@@ -28,7 +28,7 @@ export async function getCandidateByCategory(category: string) {
     "resumeUrl": resume.asset->url,
     bio,
     skills,
-    introVideo,
+    "introVideo": introVideo.asset->url,
     experience
   }`;
 

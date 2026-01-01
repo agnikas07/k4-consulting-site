@@ -45,41 +45,6 @@
   }
 
   /**
-     * @param {string | string[]} url
-     */
-  function getVideoType(url) {
-    if (!url) return null;
-    if (url.includes('youtube.com') || url.includes('youtu.be')) return 'youtube';
-    if (url.includes('vimeo.com')) return 'vimeo';
-    return 'file';
-  }
-
-  /**
-     * @param {string} url
-     */
-  function getEmbedUrl(url) {
-    if (!url) return '';
-    
-    // Handle YouTube
-    if (url.includes('youtube.com') || url.includes('youtu.be')) {
-      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-      const match = url.match(regExp);
-      const id = (match && match[2].length === 11) ? match[2] : null;
-      return id ? `https://www.youtube.com/embed/${id}` : url;
-    }
-    
-    // Handle Vimeo
-    if (url.includes('vimeo.com')) {
-      const regExp = /vimeo\.com\/(\d+)/;
-      const match = url.match(regExp);
-      const id = match ? match[1] : null;
-      return id ? `https://player.vimeo.com/video/${id}` : url;
-    }
-
-    return url;
-  }
-
-  /**
      * @param {string} category
      */
   async function loadCandidate(category) {
@@ -277,30 +242,33 @@
                 <PlayCircle size={28} class="text-[#A70E03]" /> Introductory Video
               </h3>
               
-              {#if candidate.introVideo}
-                <div class="rounded-2xl overflow-hidden shadow-2xl border border-black/10 bg-black aspect-video relative group">
-                  
-                  {#if getVideoType(candidate.introVideo) === 'youtube' || getVideoType(candidate.introVideo) === 'vimeo'}
-                    <iframe 
-                      src={getEmbedUrl(candidate.introVideo)} 
-                      title="Candidate Intro Video"
-                      class="w-full h-full"
-                      frameborder="0" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                      allowfullscreen
-                    ></iframe>
+                  {#if candidate.introVideo}
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border border-black/10 bg-black aspect-video relative group">
+                      
+                      {#if candidate.introVideo}
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border border-black/10 bg-black aspect-video relative group">
+                      <video 
+                        controls 
+                        playsinline
+                        class="w-full h-full object-cover"
+                        src={candidate.introVideo}
+                        preload="metadata"
+                      >
+                        <track kind="captions" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <p class="mt-4 text-black/60 italic text-sm text-center">
+                      Get a sense of {candidate.name ? candidate.name.split(' ')[0] : 'the candidate'}'s communication style and professionalism.
+                    </p>
                   {:else}
-                    <video 
-                       controls 
-                       class="w-full h-full object-cover"
-                       src={candidate.introVideo}
-                       poster={candidate.image} 
-                     >
-                       <track kind="captions" />
-                       Your browser does not support the video tag.
-                     </video>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-12 text-center">
+                        <div class="inline-flex bg-slate-200 p-4 rounded-full mb-4">
+                          <PlayCircle size={32} class="text-slate-400" />
+                        </div>
+                        <p class="text-slate-500 font-medium">No introductory video available for this candidate.</p>
+                    </div>
                   {/if}
-
                 </div>
                 <p class="mt-4 text-black/60 italic text-sm text-center">
                   Get a sense of {candidate.name.split(' ')[0]}'s communication style and professionalism.

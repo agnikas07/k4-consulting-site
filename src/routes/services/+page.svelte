@@ -129,7 +129,7 @@
           Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A70E03] to-[#d91204]">Services</span>
         </h1>
         <p class="text-xl text-black/80 mb-10 leading-relaxed">
-          Comprehensive remote staffing solutions tailored to scale your business and optimize operations.
+          Comprehensive solutions for tax-advantaged benefits, elite remote talent, and operational strategy designed to scale your business.
         </p>
       </div>
     </div>

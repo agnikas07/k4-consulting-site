@@ -203,7 +203,7 @@
         <div>
           <h2 class="text-4xl font-bold text-black mb-6">Why Kilo 4?</h2>
           <p class="text-black/70 text-lg mb-8">
-            The name "Kilo 4" is a nod to the military designation for handlers and specialists. It represents a specific skill set, a specific duty, and a specific standard.
+            The name "Kilo 4" is a nod to the military designation for handlers and specialists. It represents a specific skill set, a specific duty, and a specific standard. We bring that disciplined approach to your entire business ecosystem—optimizing your people, your processes, and your profitability.
           </p>
           
           <div class="space-y-6">
@@ -214,9 +214,9 @@
                 </div>
               </div>
               <div>
-                <h3 class="text-lg font-bold text-black">Vetted Excellence</h3>
+                <h3 class="text-lg font-bold text-black">Elite Standards</h3>
                 <p class="mt-2 text-black/70">
-                  We don't just pass along resumes. We interview, verify, and train. Only the top candidates make it to your desk.
+                  We don't deal in generic advice or untrained talent. Whether it’s fractional leadership, a remote pro, or a new strategy, we deliver vetted solutions designed to perform from day one.
                 </p>
               </div>
             </div>
@@ -228,9 +228,9 @@
                 </div>
               </div>
               <div>
-                <h3 class="text-lg font-bold text-black">Fair Wages</h3>
+                <h3 class="text-lg font-bold text-black">Maximum Efficiency</h3>
                 <p class="mt-2 text-black/70">
-                  We believe in fair pay for fair work. Our model ensures your team members are motivated, happy, and loyal to your business.
+                  We believe in growth without the bloat. By combining zero-net-cost benefits that retain staff with systems that eliminate bottlenecks, we ensure your business runs leaner and more profitably.
                 </p>
               </div>
             </div>
@@ -254,7 +254,7 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl md:text-5xl font-bold mb-6">Join The Mission</h2>
       <p class="text-xl text-white/70 mb-10">
-        Ready to build a team that operates with precision and integrity? Let's talk.
+        Ready to take command of your business with elite talent, smarter benefits, and operational integrity? Let's talk.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="/contact" class="bg-[#A70E03] text-white px-8 py-4 rounded-lg font-bold hover:bg-red-500 transition-colors shadow-lg shadow-red-600/25">
