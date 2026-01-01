@@ -272,7 +272,7 @@
   <!-- CTA Section (Shared) -->
   <section class="py-24 bg-[#A70E03] text-white text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Hire?</h2>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Grow?</h2>
       <p class="text-xl text-white/80 mb-10">
         Let's discuss how we can help you build your dream team.
       </p>
