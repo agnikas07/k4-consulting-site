@@ -68,7 +68,7 @@
       icon: UserPlus
     },
     {
-      title: 'High Level Strategic Leadership',
+      title: 'Fractional COO/CSO Services',
       desc: 'Leadership without the full-time salary. I help you set direction, build execution plans, align your team, and keep the business moving forward.',
       icon: LifeBuoy
     }
@@ -195,10 +195,10 @@
           <h2 class="text-4xl font-bold text-white">About Us</h2>
           <div class="prose prose-lg text-white max-w-none space-y-4">
             <p>
-              “Kilo 4 Consulting was built on a simple belief: most businesses don’t fail from lack of effort. They fail from lack of structure. We help founders install the systems, talent, and benefits that make growth predictable instead of painful. If it doesn’t move the business forward, we don’t do it.
+              Kilo 4 Consulting was built on a simple belief: most businesses don’t fail from lack of effort. They fail from lack of structure. We help founders install the systems, talent, and benefits that make growth predictable instead of painful. If it doesn’t move the business forward, we don’t do it.
             </p>
-            <p class="border-l-4 border-[#D4AF37] pl-4 italic bg-[#504B51] py-2 pr-2">
-              "Our founder, a former U.S. Air Force Explosive Detection Dog Handler, carries years of military discipline, leadership, and commitment."
+            <p>
+              Our founder is an Air Force Veteran that brings the discipline, clarity, and leadership forged in service into every part of the business.
             </p>
             <p>
               No fluff. No guesswork. Just execution.
@@ -400,7 +400,7 @@
             <img src="/assets/k4Logo.png" alt="Kilo 4 Consulting Logo" class="h-20 md:h-32 lg:h-40 w-auto"/>
           </div>
           <p class="mb-6 max-w-sm text-white">
-            Empowering businesses with world-class remote talent. Connecting discipline, integrity, and skill to your workforce needs.
+            Connect with us on social media!
           </p>
           <div class="flex gap-4">
             <a href="https://www.facebook.com/profile.php?id=61577257187782" target="_blank" rel="noopener noreferrer" class="hover:text-white"><Facebook size={20}/></a>

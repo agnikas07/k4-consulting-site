@@ -265,7 +265,7 @@
   </section>
 
   <!-- Footer (Shared Style) -->
-  <footer class="bg-black/90 text-white/60 py-16 border-t border-black">
+  <footer class="bg-[#5A555B] text-white/60 py-16 border-t border-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-12">
         <div class="col-span-2">
@@ -273,7 +273,7 @@
             <img src="/assets/k4Logo.png" alt="Kilo 4 Consulting Logo" class="h-20 md:h-32 lg:h-40 w-auto"/>
           </div>
           <p class="mb-6 max-w-sm text-white">
-            Empowering businesses with world-class remote talent. Connecting discipline, integrity, and skill to your workforce needs.
+            Connect with us on social media!
           </p>
           <div class="flex gap-4">
             <a href="https://www.facebook.com/profile.php?id=61577257187782" target="_blank" rel="noopener noreferrer" class="hover:text-white"><Facebook size={20}/></a>

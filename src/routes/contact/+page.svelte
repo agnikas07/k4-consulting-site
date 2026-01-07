@@ -293,7 +293,7 @@
             <img src="/assets/k4Logo.png" alt="Kilo 4 Consulting Logo" class="h-20 md:h-32 lg:h-40 w-auto"/>
           </div>
           <p class="mb-6 max-w-sm text-white">
-            Empowering businesses with world-class remote talent. Connecting discipline, integrity, and skill to your workforce needs.
+            Connect with us on social media!
           </p>
           <div class="flex gap-4">
             <a href="https://www.facebook.com/profile.php?id=61577257187782" target="_blank" rel="noopener noreferrer" class="hover:text-white"><Facebook size={20}/></a>

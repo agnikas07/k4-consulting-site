@@ -3,7 +3,7 @@
   import { 
     Facebook, Twitter, Instagram, Youtube, 
     MapPin,CheckCircle2, User, Star, FileDown,
-    X, Menu, PlayCircle
+    X, Menu, PlayCircle, Phone, UserCheck, Briefcase
   } from 'lucide-svelte';
   import { getCandidateByCategory } from '$lib/sanity';
   import { slide } from 'svelte/transition';
@@ -304,6 +304,41 @@
     </div>
   </section>
 
+  <section class="py-24 bg-black text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl font-bold mb-6">Our Talent Selection Process</h2>
+        <p class="text-white/70 text-lg">
+          We handle the heavy lifting of recruitment so you can focus on scaling your business.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {#each [
+          { title: 'Consultation', desc: 'We discuss your needs and define the specific role requirements.', icon: Phone }, 
+          { title: 'Selection', desc: 'You review candidates and select the best matches to interview.', icon: UserCheck },
+          { title: 'Hiring', desc: 'We help facilitate a smooth transition with three months of support.', icon: Briefcase }
+        ] as step, i}
+          <div class="relative group">
+            <div class="mb-6 relative z-10">
+              <div class="w-16 h-16 rounded-full bg-[#A70E03] flex items-center justify-center text-white shadow-lg mx-auto group-hover:scale-110 transition-transform duration-300">
+                <svelte:component this={step.icon} size={28} />
+              </div>
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-[#A70E03]/30 rounded-full -z-10 animate-pulse"></div>
+            </div>
+            {#if i < 2}
+              <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-white/20 -z-0"></div>
+            {/if}
+            <div class="text-center relative z-10">
+              <h3 class="text-xl font-bold mb-3">{step.title}</h3>
+              <p class="text-white/60 text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          </div>
+        {/each}
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section (Shared) -->
   <section class="py-24 bg-[#A70E03] text-white text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -328,7 +363,7 @@
             <img src="/assets/k4Logo.png" alt="Kilo 4 Consulting Logo" class="h-20 md:h-32 lg:h-40 w-auto"/>
           </div>
           <p class="mb-6 max-w-sm text-white">
-            Empowering businesses with world-class remote talent. Connecting discipline, integrity, and skill to your workforce needs.
+            Connect with us on social media!
           </p>
           <div class="flex gap-4">
             <a href="https://www.facebook.com/profile.php?id=61577257187782" target="_blank" rel="noopener noreferrer" class="hover:text-white"><Facebook size={20}/></a>
