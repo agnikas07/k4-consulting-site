@@ -49,7 +49,7 @@
       icon: Calculator
     },
     {
-      title: 'Fractional Leadership',
+      title: 'Fractional COO/CSO Services',
       desc: 'High-level strategic leadership without the full-time salary. I help you set direction, build execution plans, align your team, and keep the business moving forward.',
       details: ['Strategic Direction', 'Execution Planning', 'Team Alignment', 'Business Growth Roadmap'],
       icon: Briefcase

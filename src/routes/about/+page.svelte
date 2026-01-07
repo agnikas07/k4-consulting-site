@@ -32,17 +32,17 @@
   const values = [
     {
       title: 'Integrity First',
-      desc: 'We operate with unwavering honesty and ethical standards in every placement.',
+      desc: 'We operate with unwavering honesty and ethical standards with every client.',
       icon: ShieldCheck
     },
     {
-      title: 'Discipline',
-      desc: 'Our military roots instill a rigorous approach to vetting and process management.',
+      title: 'Service Before Self',
+      desc: 'Support the client\'s mission before personal gain.',
       icon: Target
     },
     {
-      title: 'Commitment',
-      desc: 'We are dedicated to the long-term success of both our clients and our candidates.',
+      title: 'Excellence in All We Do',
+      desc: 'High standards and pride in our work, no exceptions.',
       icon: Heart
     }
   ];
@@ -120,7 +120,7 @@
           Our Story & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A70E03] to-[#d91204]">Mission</span>
         </h1>
         <p class="text-xl text-black/80 mb-10 leading-relaxed">
-          Bridging the gap between U.S. businesses and global talent through discipline, integrity, and operational excellence.
+          Built on discipline, clarity, and execution. Kilo 4 Consulting exists to help founders build businesses that are structured, scalable, and built to last.
         </p>
       </div>
     </div>
@@ -137,14 +137,10 @@
         <div class="relative order-2 lg:order-1">
           <div class="absolute -inset-4 bg-[#A70E03]/5 rounded-2xl transform -rotate-2"></div>
           <img 
-            src="/assets/aboutSectionImage.jpg" 
-            alt="Founder or Team" 
+            src="/assets/k4HeloImage.jpg" 
+            alt="Founder Pablo with Helicopter" 
             class="relative rounded-2xl shadow-2xl w-full object-cover h-[600px]"
           />
-          <div class="absolute -bottom-6 -right-6 bg-[#A70E03] text-white p-6 rounded-xl shadow-xl z-20 max-w-xs">
-            <p class="font-bold text-lg mb-2">"Service Before Self"</p>
-            <p class="text-white/80 text-sm">Guided by core military principles.</p>
-          </div>
         </div>
         
         <!-- Text Content -->
@@ -155,16 +151,10 @@
           </div>
           <div class="prose prose-lg text-black/70 space-y-6">
             <p>
-              Kilo 4 Consulting was born from a desire to bring a higher standard of reliability to the remote staffing industry. Too often, businesses struggle with unvetted freelancers, inconsistent communication, and a lack of accountability.
+              Kilo 4 Consulting was built on the same standards that guide the world’s best Air Force: <strong>Integrity First, Service Before Self, and Excellence in All We Do</strong>. These principles shape how we support founders, build teams, and approach every engagement.
             </p>
             <p>
-              Our founder, a former <strong>U.S. Air Force Explosive Detection Dog Handler</strong>, understands that the success of any mission relies on the quality of the team and the discipline of their execution.
-            </p>
-            <p class="border-l-4 border-[#A70E03] pl-6 italic text-black bg-black/5 py-4 pr-4 rounded-r-lg">
-              "In the military, trust is everything. We apply that same level of trust and verification to connecting business owners with their new team members."
-            </p>
-            <p>
-              Today, we serve as the bridge, ensuring that U.S. companies can scale efficiently while providing life-changing career opportunities to talented professionals abroad.
+              Founded by a former <strong>U.S. Air Force Explosive Detection Dog Handler</strong>, Kilo 4 applies discipline, accountability, and operational clarity to help businesses execute at a higher level and scale with confidence.”
             </p>
           </div>
         </div>
@@ -178,7 +168,7 @@
       <div class="text-center max-w-2xl mx-auto mb-16">
         <h2 class="text-4xl font-bold mb-4">Our Core Values</h2>
         <p class="text-red-100 text-lg">
-          These aren't just words on a wall. They are the principles that guide every decision we make and every candidate we place.
+          These aren't just words on a wall. They are the principles that guide every decision we make.
         </p>
       </div>
 
@@ -203,7 +193,7 @@
         <div>
           <h2 class="text-4xl font-bold text-black mb-6">Why Kilo 4?</h2>
           <p class="text-black/70 text-lg mb-8">
-            The name "Kilo 4" is a nod to the military designation for handlers and specialists. It represents a specific skill set, a specific duty, and a specific standard. We bring that disciplined approach to your entire business ecosystem—optimizing your people, your processes, and your profitability.
+            Kilo 4 isn’t a brand name. It’s a standard. It was our founders call sign. In the military, every role has a purpose and every mission has a measurable outcome. That’s the same lens we use in business. We focus on what actually moves the needle: better people, cleaner systems, and stronger execution.
           </p>
           
           <div class="space-y-6">
@@ -216,7 +206,7 @@
               <div>
                 <h3 class="text-lg font-bold text-black">Elite Standards</h3>
                 <p class="mt-2 text-black/70">
-                  We don't deal in generic advice or untrained talent. Whether it’s fractional leadership, a remote pro, or a new strategy, we deliver vetted solutions designed to perform from day one.
+                  We don’t offer generic advice or average solutions. Whether it’s fractional leadership, talent, or strategy, everything is vetted, intentional, and built to perform from day one.
                 </p>
               </div>
             </div>
@@ -230,7 +220,7 @@
               <div>
                 <h3 class="text-lg font-bold text-black">Maximum Efficiency</h3>
                 <p class="mt-2 text-black/70">
-                  We believe in growth without the bloat. By combining zero-net-cost benefits that retain staff with systems that eliminate bottlenecks, we ensure your business runs leaner and more profitably.
+                  Growth shouldn’t mean more chaos or more overhead. We help businesses scale by eliminating bottlenecks, tightening operations, and increasing output without adding unnecessary cost.
                 </p>
               </div>
             </div>
