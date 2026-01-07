@@ -9,7 +9,7 @@ export const sanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true,
+  useCdn: false,
 });
 
 const builder = imageUrlBuilder(sanityClient);
@@ -29,7 +29,8 @@ export async function getCandidateByCategory(category: string) {
     bio,
     skills,
     "introVideo": introVideo.asset->url,
-    experience
+    experience,
+    monthlyRate
   }`;
 
   const params = { category };

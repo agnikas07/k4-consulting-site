@@ -3,7 +3,10 @@
   import { 
     Facebook, Twitter, Instagram, Youtube, 
     MapPin,CheckCircle2, User, Star, FileDown,
-    X, Menu, PlayCircle, Phone, UserCheck, Briefcase
+    X, Menu, PlayCircle, Phone, UserCheck, Briefcase,
+
+    DollarSign
+
   } from 'lucide-svelte';
   import { getCandidateByCategory } from '$lib/sanity';
   import { slide } from 'svelte/transition';
@@ -21,12 +24,15 @@
     'Customer Support Agent',
     'Executive Assistant',
     'Finance & Accounting',
-    'Operations Specialist'
+    'Marketing Specialist',
+    'Operations Specialist',
+    'Sales Representative',
+    'Wildcard'
   ]
 
   let selectedCategory = categories[0];
   /**
-     * @type {{ image: any; name: string; title: any; location: any; experience: string | any[]; availability: any; resumeUrl: any; skills: any; bio: any; introVideo: any; } | null}
+     * @type {{ image: any; name: string; title: any; location: any; experience: string | any[]; availability: any; resumeUrl: any; skills: any; bio: any; introVideo: any; monthlyRate: number; } | null}
      */
   let candidate = null;
   let loading = true;
@@ -186,11 +192,15 @@
                 <p class="text-[#A70E03] font-medium mb-4">{candidate.title}</p>
                 
                 <div class="w-full border-t border-black/5 py-4 space-y-3">
-                  <div class="flex items-center gap-3 text-sm text-black/70 justify-center">
+                  <div class="flex items-center gap-1 text-sm text-black/70 justify-center">
                     <MapPin size={16} class="text-[#A70E03]" />
                     {candidate.location}
                   </div>
-                  <div class="flex items-center gap-3 text-sm text-green-600 font-semibold justify-center">
+                  <div class="flex items-center gap-0 text-sm text-black/70 justify-center">
+                    <DollarSign size={16} class="text-[#A70E03]" />
+                    {candidate.monthlyRate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}/month
+                  </div>
+                  <div class="flex items-center gap-2 text-sm text-green-600 font-semibold justify-center">
                     <CheckCircle2 size={16} />
                     {candidate.availability}
                   </div>
