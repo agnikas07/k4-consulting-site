@@ -10,6 +10,8 @@ let { children } = $props();</script>
 	<meta name="description" content="We help founders install the systems, remote talent, and benefits that make growth predictable. Schedule a consultation today." />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+	<meta name="google-site-verification" content="UwQdg9Iyp1_02COwwaQHBVRtGCr_qG6l-ABq5-yMzys" />
+
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Kilo 4 Consulting" />
 	<meta property="og:title" content="Kilo 4 Consulting | Better Talent. Better Systems." />
