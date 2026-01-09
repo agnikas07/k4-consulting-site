@@ -211,9 +211,9 @@
         <div class="relative">
           <div class="absolute -inset-4 bg-[#A70E03]/5 rounded-2xl transform rotate-3"></div>
           <img 
-            src="/assets/aboutSectionImage.jpg" 
+            src="/assets/aboutSectionImage.png" 
             alt="Business meeting" 
-            class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px]"
+            class="relative rounded-2xl shadow-2xl w-full object-contain h-auto max-h-[500px]"
           />
         </div>
       </div>
