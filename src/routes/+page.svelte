@@ -213,7 +213,7 @@
           <img 
             src="/assets/aboutSectionImage.png" 
             alt="Business meeting" 
-            class="relative rounded-2xl shadow-2xl w-full object-contain h-auto max-h-[500px]"
+            class="relative rounded-2xl shadow-2xl w-full object-contain h-auto max-h-[700px] transform lg:translate-x-8 lg:scale-125 transition-transform duration-300"
           />
         </div>
       </div>
