@@ -305,10 +305,6 @@
             alt="Mission discussion" 
             class="relative rounded-2xl shadow-2xl z-10"
           />
-          <div class="absolute -bottom-6 -right-6 bg-[#A70E03] text-white p-6 rounded-xl shadow-xl z-20 max-w-xs hidden md:block">
-            <p class="font-bold text-lg mb-2">"Discipline. Integrity. Commitment."</p>
-            <p class="text-slate-400 text-sm">- Core Values</p>
-          </div>
         </div>
         
         <div class="lg:w-1/2">

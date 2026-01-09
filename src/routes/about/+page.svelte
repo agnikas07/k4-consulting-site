@@ -230,9 +230,9 @@
         <div class="relative">
              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-br from-red-100/50 to-transparent rounded-full blur-3xl -z-10"></div>
              <img 
-            src="/assets/ourMissionImage.jpg" 
-            alt="Team Collaboration" 
-            class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px] border-4 border-white"
+            src="/assets/whyK4.png" 
+            alt="Kilo 4 Logo" 
+            class="w-full object-cover h-[500px]"
           />
         </div>
       </div>
